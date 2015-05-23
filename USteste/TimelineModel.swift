@@ -67,7 +67,7 @@ class TimelineModel{
     
     func prepareLineWithImg(index : Int, modelo : StylesModel, colView : UICollectionView){
         //STR IGUAL A NOME DO TRACO
-        let str = "traco1";
+        let str = "but";
         
         let pointFrom = modelo.getCoordinatePoint(index);
         let pointTo = modelo.getCoordinatePoint(index-1);
@@ -79,9 +79,9 @@ class TimelineModel{
         sizeAux = CGSizeMake((sizeAux.width==0) ? 1 : sizeAux.width, (sizeAux.height==0) ? 1 : sizeAux.height);
         linePosition = CGPointMake(x*sizeAux.width, y*sizeAux.height);
         
-        let angle = (x==0.0) ? (y==0.0) ? 0 : 90 : (y==0.0) ? 180 : 270;
+        let angle:CGFloat = (x==0.0) ? (y==0.0) ? 0 : 90 : (y==0.0) ? 270 : 180;
         // angulo = 180*x + 90*y
-        line = UIImage(named: "traco1")?.imageRotatedByDegrees(90*(2*x+y), flip: false);
+        line = UIImage(named: str)?.imageRotatedByDegrees(angle, flip: false);
         line = line.imageResizedTo(sizeAux);
     }
     
