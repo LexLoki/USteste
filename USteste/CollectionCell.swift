@@ -53,14 +53,18 @@ class CollectionCell : UICollectionViewCell{
         id=tipo;
         
         if(tipo>0){
-            let or = CGPointMake(imageView.center.x - timeline.linePosition.x, imageView.center.y - timeline.linePosition.y);
-            lineView.frame = CGRect(origin: or, size: timeline.line.size);
-            lineView.image = timeline.line;
+            setLine(timeline);
         }
         else{
             lineView.image = nil;
         }
         
+    }
+    
+    private func setLine(timeline : TimelineModel){
+        let or = CGPointMake(imageView.center.x - timeline.linePosition.x, imageView.center.y - timeline.linePosition.y);
+        lineView.frame = CGRect(origin: or, size: timeline.line.size);
+        lineView.image = timeline.line;
     }
     
     func reset(){

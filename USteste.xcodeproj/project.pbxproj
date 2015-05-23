@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD6A4AE21B11042400B13DA9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A4AE11B11042400B13DA9 /* Extensions.swift */; };
 		FDCD98171B0A8C65005D50C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCD98161B0A8C65005D50C9 /* AppDelegate.swift */; };
 		FDCD98191B0A8C65005D50C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCD98181B0A8C65005D50C9 /* ViewController.swift */; };
 		FDCD981C1B0A8C65005D50C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDCD981A1B0A8C65005D50C9 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FD6A4AE11B11042400B13DA9 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FDCD98111B0A8C65005D50C9 /* USteste.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = USteste.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDCD98151B0A8C65005D50C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FDCD98161B0A8C65005D50C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			children = (
 				FDCD983B1B0A8E57005D50C9 /* StylesModel.swift */,
 				FDCD98411B0ABB73005D50C9 /* TimelineModel.swift */,
+				FD6A4AE11B11042400B13DA9 /* Extensions.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				FDCD98421B0ABB73005D50C9 /* TimelineModel.swift in Sources */,
 				FDCD98191B0A8C65005D50C9 /* ViewController.swift in Sources */,
 				FDCD98401B0A949D005D50C9 /* TimelineView.swift in Sources */,
+				FD6A4AE21B11042400B13DA9 /* Extensions.swift in Sources */,
 				FDCD983C1B0A8E57005D50C9 /* StylesModel.swift in Sources */,
 				FDCD98171B0A8C65005D50C9 /* AppDelegate.swift in Sources */,
 				FDCD983E1B0A92F2005D50C9 /* TimelineVC.swift in Sources */,
