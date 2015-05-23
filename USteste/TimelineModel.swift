@@ -15,6 +15,7 @@ class TimelineModel{
     var imagem : UIImage!;
     
     var line : UIImage!;
+    var linePosition : CGPoint!;
     
     
     init(modelo : StylesModel, tam : Int){
@@ -31,5 +32,64 @@ class TimelineModel{
         
     }
 */
+    func prepareLine(index : Int, modelo : StylesModel, colView : UICollectionView){
+        let pointFrom = modelo.getCoordinatePoint(index);
+        let pointTo = modelo.getCoordinatePoint(index-1);
+        
+        let size = (colView.collectionViewLayout as! UICollectionViewFlowLayout).itemSize;
+        let x:CGFloat = (pointFrom.x<=pointTo.x) ? 0.0 : 1.0;
+        let y:CGFloat = (pointFrom.y<=pointTo.y) ? 0.0 : 1.0;
+        var sizeAux = CGSizeMake(CGFloat(abs(pointFrom.x-pointTo.x))*size.width, CGFloat(abs(pointFrom.y-pointTo.y))*size.height);
+        sizeAux = CGSizeMake((sizeAux.width==0) ? 1 : sizeAux.width, (sizeAux.height==0) ? 1 : sizeAux.height);
+        let bounds = CGRect(origin: CGPointZero, size: sizeAux);
+        let opaque = false
+        let scale: CGFloat = 0
+        UIGraphicsBeginImageContextWithOptions(bounds.size, opaque, scale)
+        let context = UIGraphicsGetCurrentContext()
+        
+        // Setup complete, do drawing here
+        CGContextSetStrokeColorWithColor(context, UIColor.orangeColor().CGColor)
+        CGContextSetLineWidth(context, 2.0)
+        
+        linePosition = CGPointMake(x*bounds.size.width, y*bounds.size.height);
+        let fromP = linePosition;
+        let toP = CGPointMake(bounds.size.width-fromP.x, bounds.size.height-fromP.y);
+        CGContextBeginPath(context)
+        CGContextMoveToPoint(context, fromP.x, fromP.y)
+        CGContextAddLineToPoint(context, toP.x, toP.y)
+        CGContextStrokePath(context)
+        
+        // Drawing complete, retrieve the finished image and cleanup
+        line = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+    }
     
+    
+    /*
+    func drawCustomImage(from: EventButton, to: EventButton) -> UIImage {
+    // Setup our context
+    let bounds = CGRect(origin: CGPoint.zeroPoint, size: myView.contentsView.frame.size);
+    let opaque = false
+    let scale: CGFloat = 0
+    UIGraphicsBeginImageContextWithOptions(bounds.size, opaque, scale)
+    let context = UIGraphicsGetCurrentContext()
+    
+    // Setup complete, do drawing here
+    CGContextSetStrokeColorWithColor(context, UIColor.orangeColor().CGColor)
+    CGContextSetLineWidth(context, 2.0)
+    
+    let fromP = CGPointMake(from.frame.origin.x+from.frame.width*0.5, from.frame.origin.y+from.frame.height*0.5);
+    let toP = CGPointMake(to.frame.origin.x+to.frame.width*0.5, to.frame.origin.y+to.frame.height*0.5);
+    CGContextBeginPath(context)
+    CGContextMoveToPoint(context, fromP.x, fromP.y)
+    CGContextAddLineToPoint(context, toP.x, toP.y)
+    CGContextStrokePath(context)
+    
+    // Drawing complete, retrieve the finished image and cleanup
+    let image = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    return image
+    }
+    */
 }

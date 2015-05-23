@@ -30,7 +30,7 @@ class TimelineView : UIView{
             bottom: 10,
             right: tela.origin.x);
         
-        let tam = tela.width/(CGFloat(modelo.colunas)*1.2);
+        let tam = tela.width/(CGFloat(modelo.colunas)*1.07);
         size = CGSizeMake(tam, tam);
         layout.itemSize = size;
         collectionView = UICollectionView(frame: CGRectMake(frame.origin.x, frame.origin.y, frame.width, frame.height), collectionViewLayout: layout);

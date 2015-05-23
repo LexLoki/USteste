@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Pietro Ribeiro Pepe. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 
 class StylesModel{
@@ -58,6 +58,11 @@ class StylesModel{
         let posY:Int = (dictY[aux] as! Int) * colunas ;
         let posX:Int = dictX[aux] as! Int;
         return ((index/self.quant) * size) + posX + posY;
+    }
+    
+    func getCoordinatePoint(index : Int) -> (x: Int, y: Int){
+        let ind = index%quant;
+        return (dictX[ind] as! Int, (index/quant)*(quant-1) + (dictY[ind] as! Int));
     }
     
     func getArrayOfTypes(timeline : Array<TimelineModel>) -> Array<Int>{

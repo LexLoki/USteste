@@ -35,14 +35,17 @@ class TimelineVC:UIViewController, UICollectionViewDelegateFlowLayout, UICollect
         timelineView.collectionView.delegate=self;
         timelineView.collectionView.dataSource=self;
         
+        prepareLines();
+        
         
     }
     
     func prepareLines(){
         let tam = timeline.count;
-        let size = (timelineView.collectionView.collectionViewLayout as! UICollectionViewFlowLayout).itemSize;
+        let collection = timelineView.collectionView;
+        let size = (collection.collectionViewLayout as! UICollectionViewFlowLayout).itemSize;
         for (var i=1; i<tam; i++){
-            //timeline[i].prepareLine(i, size: size, modelo: modelo);
+            timeline[i].prepareLine(i, modelo: modelo, colView: collection);
         }
     }
     

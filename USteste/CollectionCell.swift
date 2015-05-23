@@ -14,9 +14,12 @@ class CollectionCell : UICollectionViewCell{
     var imageView: UIImageView!;
     var id: Int!;
     var label : UILabel!;
+    var lineView: UIImageView!;
     
     override init(frame: CGRect) {
         super.init(frame: frame);
+        lineView = UIImageView();
+        lineView.contentMode = UIViewContentMode.ScaleToFill;
         imageView = UIImageView();
         imageView.center = CGPointMake(0.5*self.frame.width, 0.5*self.frame.height);
         imageView.layer.zPosition = 10;
@@ -24,6 +27,7 @@ class CollectionCell : UICollectionViewCell{
         label.center = imageView.center;
         label.bounds.size = self.frame.size;
         label.textAlignment = NSTextAlignment.Center;
+        self.contentView.addSubview(lineView);
         self.contentView.addSubview(imageView);
         self.addSubview(label);
 
@@ -49,43 +53,22 @@ class CollectionCell : UICollectionViewCell{
         id=tipo;
         
         if(tipo>0){
-            //drawCustomImage();
+            let or = CGPointMake(imageView.center.x - timeline.linePosition.x, imageView.center.y - timeline.linePosition.y);
+            lineView.frame = CGRect(origin: or, size: timeline.line.size);
+            lineView.image = timeline.line;
+        }
+        else{
+            lineView.image = nil;
         }
         
     }
     
     func reset(){
+        lineView.image = nil;
         imageView.image = nil;
         label.text = nil;
         id = -1;
     }
-    
-    /*
-    func drawCustomImage(from: EventButton, to: EventButton) -> UIImage {
-        // Setup our context
-        let bounds = CGRect(origin: CGPoint.zeroPoint, size: myView.contentsView.frame.size);
-        let opaque = false
-        let scale: CGFloat = 0
-        UIGraphicsBeginImageContextWithOptions(bounds.size, opaque, scale)
-        let context = UIGraphicsGetCurrentContext()
-        
-        // Setup complete, do drawing here
-        CGContextSetStrokeColorWithColor(context, UIColor.orangeColor().CGColor)
-        CGContextSetLineWidth(context, 2.0)
-        
-        let fromP = CGPointMake(from.frame.origin.x+from.frame.width*0.5, from.frame.origin.y+from.frame.height*0.5);
-        let toP = CGPointMake(to.frame.origin.x+to.frame.width*0.5, to.frame.origin.y+to.frame.height*0.5);
-        CGContextBeginPath(context)
-        CGContextMoveToPoint(context, fromP.x, fromP.y)
-        CGContextAddLineToPoint(context, toP.x, toP.y)
-        CGContextStrokePath(context)
-        
-        // Drawing complete, retrieve the finished image and cleanup
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return image
-    }
-    */
     
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
