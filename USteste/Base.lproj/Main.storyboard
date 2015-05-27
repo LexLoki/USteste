@@ -7,11 +7,7 @@
         <!--TimelineVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-<<<<<<< HEAD
                 <viewController id="BYZ-38-t0r" customClass="TimelineVC" customModule="USteste" customModuleProvider="target" sceneMemberID="viewController">
-=======
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
->>>>>>> origin/master
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
