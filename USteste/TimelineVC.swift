@@ -9,8 +9,6 @@
 import Foundation
 import UIKit
 
-
-
 class TimelineVC:UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
     
     var timelineView : TimelineView!;
