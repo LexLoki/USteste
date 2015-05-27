@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+<<<<<<< HEAD
 
 
 class TimelineVC:UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource
@@ -26,6 +27,19 @@ class TimelineVC:UIViewController, UICollectionViewDelegateFlowLayout, UICollect
     {
         // CARREGANDO CONFIGURACOES DO MODELO DE ESTILO
         modelo = StylesModel(tipo: 1)
+=======
+class TimelineVC:UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
+    
+    var timelineView : TimelineView!;
+    var modelo : StylesModel!;
+    var timeline : Array<TimelineModel>!;
+    var typesArray : Array<Int>!;
+    
+    override func viewDidLoad() {
+        
+        //CARREGANDO CONFIGURACOES DO MODELO DE ESTILO
+        modelo = StylesModel(tipo: 1);
+>>>>>>> origin/master
         
         // INICIALIZANDO SEM PLIST, PARA TESTAR JOGAMOS UM ARRAY DE 20 TIMELINEMODELS TENDO SO 1 TAMANHO
         timeline = [TimelineModel]()
