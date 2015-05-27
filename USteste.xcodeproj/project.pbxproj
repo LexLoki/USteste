@@ -94,7 +94,6 @@
 				FDCD98381B0A8CAE005D50C9 /* Model */,
 				FDCD98161B0A8C65005D50C9 /* AppDelegate.swift */,
 				FDCD98181B0A8C65005D50C9 /* ViewController.swift */,
-				FDCD981A1B0A8C65005D50C9 /* Main.storyboard */,
 				FDCD981D1B0A8C65005D50C9 /* Images.xcassets */,
 				FDCD981F1B0A8C65005D50C9 /* LaunchScreen.xib */,
 				FDCD98141B0A8C65005D50C9 /* Supporting Files */,
@@ -140,6 +139,7 @@
 			children = (
 				FDCD983F1B0A949D005D50C9 /* TimelineView.swift */,
 				FDCD98391B0A8CD2005D50C9 /* CollectionCell.swift */,
+				FDCD981A1B0A8C65005D50C9 /* Main.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";

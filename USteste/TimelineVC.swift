@@ -11,35 +11,44 @@ import UIKit
 
 
 
-class TimelineVC:UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
-    
-    var timelineView : TimelineView!;
-    var modelo : StylesModel!;
-    var timeline : Array<TimelineModel>!;
-    var typesArray : Array<Int>!;
-    
-    override func viewDidLoad() {
+class TimelineVC:UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource
+{
+    var timelineView: TimelineView!
+
+    var modelo: StylesModel!
+
+    var timeline: [TimelineModel]!
+
+    var typesArray: [Int]!
+
+
+    override func viewDidLoad()
+    {
+        // CARREGANDO CONFIGURACOES DO MODELO DE ESTILO
+        modelo = StylesModel(tipo: 1)
         
-        //CARREGANDO CONFIGURACOES DO MODELO DE ESTILO
-        modelo = StylesModel(tipo: 1);
-        
-        //INICIALIZANDO SEM PLIST, PARA TESTAR JOGAMOS UM ARRAY DE 20 TIMELINEMODELS TENDO SO 1 TAMANHO
-        timeline = Array<TimelineModel>();
-        for (var i=0; i<20; i++){
-            timeline.append(TimelineModel(modelo: modelo, tam: i%3));
+        // INICIALIZANDO SEM PLIST, PARA TESTAR JOGAMOS UM ARRAY DE 20 TIMELINEMODELS TENDO SO 1 TAMANHO
+        timeline = [TimelineModel]()
+        for (var i = 0 ; i < 20 ; i++) {
+            timeline.append(TimelineModel(modelo: modelo, tam: i%3))
         }
         
-        //TYPESARRAY é para ser usado para a montagem da collection
-        typesArray = modelo.getArrayOfTypes(timeline);
+        // TYPESARRAY é para ser usado para a montagem da collection
+        typesArray = modelo.getArrayOfTypes(timeline)
         
-        //CARREGANDO VIEW
-        timelineView = TimelineView(view: view, parent: self, modelo: modelo);
-        timelineView.collectionView.delegate=self;
-        timelineView.collectionView.dataSource=self;
+        // CARREGANDO VIEW
+        // Gambiarra
+        let y = 40
+        let origin = CGPoint(x: 0, y: y)
+        let size = CGSize(width: CGFloat(view.frame.width), height: CGFloat(Int(view.frame.height) - y))
+        timelineView = TimelineView(frame: CGRect(origin: origin, size: size))
+        timelineView.model = modelo
+        timelineView.collectionViewDelegate = self
+        timelineView.collectionViewDataSource = self
         
-        prepareLines();
+        view.addSubview(timelineView)
         
-        
+        prepareLines()
     }
     
     func prepareLines(){
