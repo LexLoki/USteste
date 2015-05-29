@@ -36,7 +36,7 @@ class StylesModel{
     
     private func definirEstilo1(){
         let keys = NSArray(array: [0,1,2,3]) as! [Int];
-        let valuesX = NSArray(array: [0,2,1,0]) as! [Int];
+        let valuesX = NSArray(array: [1,2,1,0]) as! [Int];
         let valuesY = NSArray(array: [0,1,2,1]) as! [Int];
         
         let keySize = NSArray(array: [0, 1 , 2]) as! [Int];

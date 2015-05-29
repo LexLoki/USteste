@@ -71,9 +71,9 @@ class TimelineView : UIView
         
         collectionView = UICollectionView(frame: CGRectMake(frame.origin.x, frame.origin.y, frame.width, frame.height), collectionViewLayout: layout)
         collectionView.registerClass(CollectionCell.self, forCellWithReuseIdentifier: "cellIdentifier")
-        collectionView!.backgroundColor = UIColor(red: 30.0/255, green: 48.0/255, blue: 68.0/255, alpha: 1.0)
+        collectionView!.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
         collectionView.layer.borderWidth = 4
-        collectionView.layer.borderColor = UIColor.blackColor().CGColor
+        collectionView.layer.borderColor = UIColor.whiteColor().CGColor
         
         addSubview(collectionView!)
     }
