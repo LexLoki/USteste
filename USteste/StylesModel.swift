@@ -14,7 +14,7 @@ class StylesModel{
     var dictX : NSDictionary!;
     var dictY : NSDictionary!;
     var dictSize : NSDictionary!;
-    
+    var dictImg : NSDictionary!;
     private var size : Int!;
     var quant : Int!;
     var colunas : Int!;
@@ -38,15 +38,18 @@ class StylesModel{
         let keys = NSArray(array: [0,1,2,3]) as! [Int];
         let valuesX = NSArray(array: [1,2,1,0]) as! [Int];
         let valuesY = NSArray(array: [0,1,2,1]) as! [Int];
+        let imgArray = ["b1","b2","b3","b4"]
+
         
         let keySize = NSArray(array: [0, 1 , 2]) as! [Int];
         let valuesSize = NSArray(array: [0.6, 0.8, 1.0]) as! [Float];
         
         dictX = NSDictionary(objects: valuesX, forKeys: keys);
         dictY = NSDictionary(objects: valuesY, forKeys: keys);
+        dictImg = NSDictionary(objects: imgArray, forKeys: keys);
         
         dictSize = NSDictionary(objects: valuesSize, forKeys: keySize);
-        
+
         size=9;
         quant = keys.count;
         colunas = 3;
