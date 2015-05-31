@@ -81,10 +81,11 @@ class TimelineModel{
         
         let angle:CGFloat = (x==0.0) ? (y==0.0) ? 0 : 90 : (y==0.0) ? 270 : 180;
         // angulo = 180*x + 90*y
-        line = UIImage(named: str)?.imageRotatedByDegrees(angle, flip: false);
+        //line = UIImage(named: str)?.imageRotatedByDegrees(angle, flip: false);
         
         //FUNCAO PARA SER USADA COMO IMAGENS INDIVIDUAIS (JENIFER STYLE)
         //line = modelo.getLineImg(index).imageRotatedByDegrees(angle, flip: false);
+        line = modelo.getLineImg(index)
         
         
         line = line.imageResizedTo(sizeAux);
