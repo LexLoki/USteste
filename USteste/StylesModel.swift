@@ -89,7 +89,7 @@ class StylesModel{
     }
     
     func getLineImg(index : Int) -> UIImage{
-        return UIImage(named: dictImg[index%quant] as! String);
+        return UIImage(named: dictImg[index%quant] as! String)!;
     }
     
 }
