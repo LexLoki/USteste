@@ -14,7 +14,7 @@ class StylesModel{
     var dictX : NSDictionary!;
     var dictY : NSDictionary!;
     var dictSize : NSDictionary!;
-    var dictImg : NSDictionary!;
+    private var dictImg : NSDictionary!;
     private var size : Int!;
     var quant : Int!;
     var colunas : Int!;
@@ -86,6 +86,10 @@ class StylesModel{
             array.insert(i, atIndex: pos);
         }
         return array;
+    }
+    
+    func getLineImg(index : Int) -> UIImage{
+        return UIImage(named: dictImg[index%quant] as! String);
     }
     
 }
