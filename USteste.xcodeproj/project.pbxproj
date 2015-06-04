@@ -104,9 +104,9 @@
 		FDCD98131B0A8C65005D50C9 /* USteste */ = {
 			isa = PBXGroup;
 			children = (
-				FDCD98361B0A8C9F005D50C9 /* Controller */,
-				FDCD98371B0A8CA6005D50C9 /* View */,
 				FDCD98381B0A8CAE005D50C9 /* Model */,
+				FDCD98371B0A8CA6005D50C9 /* View */,
+				FDCD98361B0A8C9F005D50C9 /* Controller */,
 				FDCD98161B0A8C65005D50C9 /* AppDelegate.swift */,
 				FDCD98181B0A8C65005D50C9 /* ViewController.swift */,
 				FDCD981D1B0A8C65005D50C9 /* Images.xcassets */,
@@ -152,6 +152,7 @@
 		FDCD98371B0A8CA6005D50C9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FDCD981A1B0A8C65005D50C9 /* Main.storyboard */,
 				FDCD983F1B0A949D005D50C9 /* TimelineView.swift */,
 				FDCD98391B0A8CD2005D50C9 /* CollectionCell.swift */,
 				FDCD981A1B0A8C65005D50C9 /* Main.storyboard */,
